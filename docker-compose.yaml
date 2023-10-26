@@ -11,4 +11,5 @@ services:
       - ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
       - ./log.txt:/root/terraria-server/log.txt
     ports:
-      - "7777:7777"   
+      - "7777:7777"
+    restart: always
