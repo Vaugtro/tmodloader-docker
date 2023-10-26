@@ -8,9 +8,7 @@ services:
       - ./serverconfig.txt:/root/terraria-server/serverconfig.txt
       - ./install.txt:/root/terraria-server/install.txt
       - ./entrypoint.sh:/root/terraria-server/entrypoint.sh
-      #- ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
+      - ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
+      - ./log.txt:/root/terraria-server/log.txt
     ports:
-      - "7777:7777"
-    
-    # stdin_open: true
-    # tty: true
+      - "7777:7777"   

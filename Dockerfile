@@ -1,8 +1,8 @@
 FROM steamcmd/steamcmd:ubuntu-22
 
+# Arguments for tModLoader version and Terraria version
 ARG TMOD_VERSION=2023.08.3.4
 ARG TERRARIA_VERSION=1449
-
 
 # ports used
 EXPOSE 7777

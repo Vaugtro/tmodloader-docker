@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # DedicatedServerUtils/Setup_tModLoaderServer.sh
 
+# Logging time snippet
+function tee_with_timestamps () {
+    local logfile=$1
+    while read data; do
+        echo "${data}" | sed -e "s/^/$(date '+%d-%m-%C%y %H:%M:%S') /" >> "${logfile}"
+        echo "${data}"
+    done
+}
 
 input="install.txt"
 if [ -f "$input" ] ; then
@@ -14,4 +22,4 @@ if [ -f "$input" ] ; then
 	steamcmd $str
 fi
 
-./start-tModLoaderServer.sh -steamworkshopfolder /root/terraria-server/workshop-mods/steamapps/workshop
+./start-tModLoaderServer.sh -steamworkshopfolder /root/terraria-server/workshop-mods/steamapps/workshop | tee_with_timestamps log.txt
