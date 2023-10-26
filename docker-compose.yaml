@@ -3,11 +3,12 @@ services:
     build: .
     image: guillheu/tmodloader-dedicated-server
     volumes:
-      # - ./Mods:/root/.local/share/Terraria/tModLoader/Mods
+      - ./Mods:/root/terraria-server/workshop-mods/steamapps/workshop
       - ./Worlds:/root/.local/share/Terraria/tModLoader/Worlds
       - ./serverconfig.txt:/root/terraria-server/serverconfig.txt
       - ./install.txt:/root/terraria-server/install.txt
-      - ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
+      - ./entrypoint.sh:/root/terraria-server/entrypoint.sh
+      #- ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
     ports:
       - "7777:7777"
     
